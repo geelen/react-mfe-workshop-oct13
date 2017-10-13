@@ -42,6 +42,7 @@ class InputArea extends React.Component {
   }
 
   render() {
+    console.log("Rendering InputArea")
     return (
       <MessageForm onSubmit={this.handleSubmit}>
         <InputField>

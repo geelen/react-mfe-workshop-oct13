@@ -14,14 +14,17 @@ const Wrapper = styled.div`
   }
 `
 
-const ChatWindow = ({ messages }) => (
-  <Wrapper>
-    {
-      messages.map((message, i) => (
-        <Message key={i} {...message}/>
-      ))
-    }
-  </Wrapper>
-)
+const ChatWindow = ({ messages }) => {
+  console.log("Rendering ChatWindow")
+  return (
+    <Wrapper>
+      {
+        messages.map((message, i) => (
+          <Message key={i} {...message}/>
+        ))
+      }
+    </Wrapper>
+  )
+}
 
 export default ChatWindow

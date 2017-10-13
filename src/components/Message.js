@@ -16,17 +16,20 @@ const Lines = styled.div`
   line-height: 1.3;
 `
 
-const Message = ({ avatar, lines }) => (
-  <Wrapper>
-    <Avatar src={ avatar }/>
-    <Lines>
-      {
-        lines.map((line, i) => (
-          <div key={i}>{ line }</div>
-        ))
-      }
-    </Lines>
-  </Wrapper>
-)
+const Message = ({ avatar, lines }) => {
+  console.log("Rendering Message")
+  return (
+    <Wrapper>
+      <Avatar src={avatar}/>
+      <Lines>
+        {
+          lines.map((line, i) => (
+            <div key={i}>{line}</div>
+          ))
+        }
+      </Lines>
+    </Wrapper>
+  )
+}
 
 export default Message

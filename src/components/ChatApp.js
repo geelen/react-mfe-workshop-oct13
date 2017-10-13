@@ -36,6 +36,7 @@ class ChatApp extends React.Component {
   }
 
   render() {
+    console.log("Rendering ChatApp")
     return (
       <FillScreen>
         <ChatWindow messages={this.state.messages}/>
