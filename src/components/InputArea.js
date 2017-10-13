@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Wrapper = styled.div`
+const MessageForm = styled.form`
   background: moccasin;
   height: 4rem;
   display: flex;
@@ -28,13 +28,22 @@ const SubmitButton = styled.button`
   color: white;
 `
 
-const InputArea = () => (
-  <Wrapper>
-    <InputField>
-      <input type="text"/>
-    </InputField>
-    <SubmitButton>⬆</SubmitButton>
-  </Wrapper>
-)
+class InputArea extends React.Component {
+  handleSubmit = event => {
+    event.preventDefault()
+    console.log("Submitted!!")
+  }
+
+  render() {
+    return (
+      <MessageForm onSubmit={this.handleSubmit}>
+        <InputField>
+          <input type="text"/>
+        </InputField>
+        <SubmitButton type="submit">⬆</SubmitButton>
+      </MessageForm>
+    )
+  }
+}
 
 export default InputArea
