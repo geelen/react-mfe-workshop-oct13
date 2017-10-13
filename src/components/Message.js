@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { observer } from 'mobx-react'
 
 const Wrapper = styled.div`
   display: flex;
@@ -32,4 +33,4 @@ const Message = ({ avatar, lines }) => {
   )
 }
 
-export default Message
+export default observer(Message)

@@ -34,10 +34,7 @@ class InputArea extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    addMessageToStore({
-      avatar: 'http://fillmurray.com/106/106',
-      lines: [this.state.message]
-    })
+    addMessageToStore(this.state.message)
     this.setState({ message: '' })
   }
 
