@@ -7,16 +7,19 @@ import InputArea from './InputArea'
 const FillScreen = styled.div`
   height: 100vh;
 `
+
+const externalFunction = () => '100vh - 4rem'
+
 const ChatWindow = styled.div`
-  height: calc(100vh - 4rem);
+  height: calc(${ props => externalFunction() });
 `
 
 const ChatApp = () => (
   <FillScreen>
     <ChatWindow>
+      <Message align="right"/>
       <Message/>
-      <Message/>
-      <Message/>
+      <Message align="right"/>
     </ChatWindow>
     <InputArea/>
   </FillScreen>
