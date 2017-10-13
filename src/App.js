@@ -9,16 +9,33 @@ const AppHeader = ({ greeting }) => (
   </header>
 )
 
+const obj = {
+  id: 'Yes this is the object',
+  foo() {
+    console.log(this)
+  }
+}
+obj.foo()
+const fn = obj.foo
+fn()
+
 class App extends Component {
   constructor() {
     super()
     this.state = { greeting: "👻🕸 It's Friday 13th!" }
+    this.handleButtonClick = this.handleButtonClick.bind(this)
   }
-  
+
   handleButtonClick() {
-    this.setState({
-      greeting: "👻🕸 IT'S FRIDAY 13TH!"
-    })
+    if (!this.state.greeting.endsWith('!!!!!!!')) {
+      this.setState({
+        greeting: this.state.greeting + '!'
+      })
+    } else {
+      this.setState({
+        greeting: "👻🕸 It's Friday 13th!"
+      })
+    }
   }
 
   render() {
