@@ -29,16 +29,25 @@ const SubmitButton = styled.button`
 `
 
 class InputArea extends React.Component {
+  state = { message: '' }
+
   handleSubmit = event => {
     event.preventDefault()
-    console.log("Submitted!!")
+    console.log(this.state.message)
+    this.setState({ message: '' })
+  }
+
+  handleInput = event => {
+    this.setState({ message: event.target.value })
   }
 
   render() {
     return (
       <MessageForm onSubmit={this.handleSubmit}>
         <InputField>
-          <input type="text"/>
+          <input type="text"
+                 value={this.state.message}
+                 onChange={this.handleInput}/>
         </InputField>
         <SubmitButton type="submit">⬆</SubmitButton>
       </MessageForm>
