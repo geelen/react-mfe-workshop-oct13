@@ -1,4 +1,6 @@
-const store = {
+import { observable } from 'mobx'
+
+const store = observable({
   messages: [
     {
       avatar: 'http://fillmurray.com/96/96',
@@ -13,7 +15,7 @@ const store = {
       lines: ['Line seven', 'Line eight', 'Line nine',]
     },
   ]
-}
+})
 
 export default store
 

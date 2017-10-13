@@ -16,7 +16,6 @@ class ChatApp extends React.Component {
       avatar: 'http://fillmurray.com/106/106',
       lines: [message]
     })
-    this.forceUpdate()
   }
 
   render() {

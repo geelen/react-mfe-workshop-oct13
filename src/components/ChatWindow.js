@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { observer } from 'mobx-react'
 
 import Message from './Message'
 
@@ -27,4 +28,4 @@ const ChatWindow = ({ messages }) => {
   )
 }
 
-export default ChatWindow
+export default observer(ChatWindow)
