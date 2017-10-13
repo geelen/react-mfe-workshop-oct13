@@ -16,20 +16,28 @@ const Lines = styled.div`
   line-height: 1.3;
 `
 
-const Message = ({ avatar, lines }) => {
-  console.log("Rendering Message")
-  return (
-    <Wrapper>
-      <Avatar src={avatar}/>
-      <Lines>
-        {
-          lines.map((line, i) => (
-            <div key={i}>{line}</div>
-          ))
-        }
-      </Lines>
-    </Wrapper>
-  )
+class Message extends React.Component {
+  shouldComponentUpdate(nextProps) {
+    return nextProps.message !== this.props.message
+  }
+
+  render() {
+    const { avatar, lines } = this.props.message
+    console.log(`Rendering Message for avatar ${avatar}`)
+
+    return (
+      <Wrapper>
+        <Avatar src={avatar}/>
+        <Lines>
+          {
+            lines.map((line, i) => (
+              <div key={i}>{line}</div>
+            ))
+          }
+        </Lines>
+      </Wrapper>
+    )
+  }
 }
 
 export default Message

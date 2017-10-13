@@ -21,7 +21,7 @@ const ChatWindow = ({ messages }) => {
     <Wrapper>
       {
         messages.map((message, i) => (
-          <Message key={i} {...message}/>
+          <Message key={i} message={message}/>
         ))
       }
     </Wrapper>
