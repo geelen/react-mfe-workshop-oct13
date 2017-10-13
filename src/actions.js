@@ -1,11 +1,9 @@
 import store from './store'
 
 const MY_AVATAR = 'http://fillmurray.com/106/106'
-export const addMessageToStore = async (line) => {
-  const lastMessage = store.messages[store.messages.length - 1]
 
-  store.isSyncing = true
-  await fetch('/api/new_message', { body: line })
+export const addMessageToStore = (line) => {
+  const lastMessage = store.messages[store.messages.length - 1]
 
   if (lastMessage && lastMessage.avatar === MY_AVATAR) {
     lastMessage.lines.push(line)
@@ -15,6 +13,4 @@ export const addMessageToStore = async (line) => {
       lines: [line]
     })
   }
-
-  store.isSyncing = false
 }
