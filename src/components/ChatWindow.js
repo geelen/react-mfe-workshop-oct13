@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { observer } from 'mobx-react'
 
 import Message from './Message'
+import store from '../store'
 
 const Wrapper = styled.div`
   height: calc(100vh - 4rem);
@@ -15,12 +16,12 @@ const Wrapper = styled.div`
   }
 `
 
-const ChatWindow = ({ messages }) => {
+const ChatWindow = () => {
   console.log("Rendering ChatWindow")
   return (
     <Wrapper>
       {
-        messages.map((message, i) => (
+        store.messages.map((message, i) => (
           <Message key={i} {...message}/>
         ))
       }

@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { addMessageToStore } from '../store'
 
 const MessageForm = styled.form`
   background: moccasin;
@@ -33,7 +34,10 @@ class InputArea extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    this.props.onNewMessage(this.state.message)
+    addMessageToStore({
+      avatar: 'http://fillmurray.com/106/106',
+      lines: [this.state.message]
+    })
     this.setState({ message: '' })
   }
 
