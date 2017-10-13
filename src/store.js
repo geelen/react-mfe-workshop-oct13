@@ -1,6 +1,8 @@
-import { observable } from 'mobx'
+import { createStore, applyMiddleware } from 'redux'
+import logger from 'redux-logger'
+import { addMessageReducer } from './reducers'
 
-const store = observable({
+const INITIAL_STATE = {
   messages: [
     {
       avatar: 'http://fillmurray.com/96/96',
@@ -15,6 +17,14 @@ const store = observable({
       lines: ['Line seven', 'Line eight', 'Line nine',]
     },
   ]
-})
+}
 
-export default store
+export default () => {
+  return createStore(
+    addMessageReducer,
+    INITIAL_STATE,
+    applyMiddleware(
+      logger
+    )
+  )
+}

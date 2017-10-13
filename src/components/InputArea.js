@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { addMessageToStore } from '../actions'
 
 const MessageForm = styled.form`
   background: moccasin;
@@ -34,7 +33,10 @@ class InputArea extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    addMessageToStore(this.state.message)
+    //dispatch({
+    //  type: 'ADD_MESSAGE',
+    //  line
+    //})
     this.setState({ message: '' })
   }
 

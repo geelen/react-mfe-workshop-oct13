@@ -1,9 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { observer } from 'mobx-react'
+import { connect } from 'react-redux'
 
 import Message from './Message'
-import store from '../store'
 
 const Wrapper = styled.div`
   height: calc(100vh - 4rem);
@@ -16,12 +15,12 @@ const Wrapper = styled.div`
   }
 `
 
-const ChatWindow = () => {
+const ChatWindow = ({ messages }) => {
   console.log("Rendering ChatWindow")
   return (
     <Wrapper>
       {
-        store.messages.map((message, i) => (
+        messages.map((message, i) => (
           <Message key={i} {...message}/>
         ))
       }
@@ -29,4 +28,8 @@ const ChatWindow = () => {
   )
 }
 
-export default observer(ChatWindow)
+export default connect(
+  store => ({
+    messages: store.messages
+  })
+)(ChatWindow)
