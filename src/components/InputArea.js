@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { connect } from 'react-redux'
 
 const MessageForm = styled.form`
   background: moccasin;
@@ -33,10 +34,10 @@ class InputArea extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    //dispatch({
-    //  type: 'ADD_MESSAGE',
-    //  line
-    //})
+    this.props.dispatch({
+      type: 'ADD_MESSAGE',
+      line: this.state.message
+    })
     this.setState({ message: '' })
   }
 
@@ -59,4 +60,4 @@ class InputArea extends React.Component {
   }
 }
 
-export default InputArea
+export default connect()(InputArea)
