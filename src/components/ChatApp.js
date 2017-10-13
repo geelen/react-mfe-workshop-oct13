@@ -8,18 +8,16 @@ const FillScreen = styled.div`
   height: 100vh;
 `
 
-const externalFunction = () => '100vh - 4rem'
-
 const ChatWindow = styled.div`
-  height: calc(${ props => externalFunction() });
+  height: calc(100vh - 4rem);
 `
 
 const ChatApp = () => (
   <FillScreen>
     <ChatWindow>
-      <Message align="right"/>
       <Message/>
-      <Message align="right"/>
+      <Message/>
+      <Message/>
     </ChatWindow>
     <InputArea/>
   </FillScreen>
