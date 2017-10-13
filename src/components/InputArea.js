@@ -1,6 +1,10 @@
 import React from 'react'
+import styled from 'styled-components'
 
-const BottomSection = 'div'
+const BottomSection = styled.div`
+  background: moccasin;
+  height: 4rem;
+`
 const InputField = 'div'
 const SubmitButton = 'div'
 
