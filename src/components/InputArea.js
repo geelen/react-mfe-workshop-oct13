@@ -13,6 +13,10 @@ const InputField = styled.div`
   padding-right: 1rem;
   > input {
     width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    padding: 0.25rem 0.5rem;  
   }
 `
 const SubmitButton = styled.button`
