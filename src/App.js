@@ -9,11 +9,6 @@ const AppIntro = () => (
   </p>
 )
 
-const obj = { a: 1, b: 2, c: 3 }
-const { a, ...rest } = obj
-console.log(a)
-console.log(rest)
-
 const ExclamationMarkAdderButton = ({ onClick, ...props }) => (
   <p>
     Add exclamation marks to the header:
