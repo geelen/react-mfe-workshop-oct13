@@ -10,6 +10,10 @@ const FillScreen = styled.div`
 
 const ChatWindow = styled.div`
   height: calc(100vh - 4rem);
+  padding: 1rem;
+  > :not(:first-child) {
+    margin-top: 1rem;
+  }
 `
 
 const ChatApp = () => (
