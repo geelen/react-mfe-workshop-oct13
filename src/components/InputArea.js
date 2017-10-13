@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const BottomSection = styled.div`
+const Wrapper = styled.div`
   background: moccasin;
   height: 4rem;
   display: flex;
@@ -29,12 +29,12 @@ const SubmitButton = styled.button`
 `
 
 const InputArea = () => (
-  <BottomSection>
+  <Wrapper>
     <InputField>
       <input type="text"/>
     </InputField>
     <SubmitButton>⬆</SubmitButton>
-  </BottomSection>
+  </Wrapper>
 )
 
 export default InputArea

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const MessageEntry = styled.div`
+const Wrapper = styled.div`
   display: flex;
 `
 
@@ -17,14 +17,14 @@ const Lines = styled.div`
 `
 
 const Message = () => (
-  <MessageEntry>
+  <Wrapper>
     <Avatar src="http://fillmurray.com/96/96"/>
     <Lines>
       <div>Line one</div>
       <div>Line two</div>
       <div>Line three</div>
     </Lines>
-  </MessageEntry>
+  </Wrapper>
 )
 
 export default Message
