@@ -21,8 +21,8 @@ const Message = ({ avatar, lines }) => (
     <Avatar src={ avatar }/>
     <Lines>
       {
-        lines.map(line => (
-          <div>{ line }</div>
+        lines.map((line, i) => (
+          <div key={i}>{ line }</div>
         ))
       }
     </Lines>
