@@ -1,23 +1,27 @@
 import React, { Component } from 'react'
-import logo from './logo.svg'
 import './App.css'
 
-const AppHeader = ({ greeting }) => (
-  <header className="App-header">
-    <img src={logo} className="App-logo" alt="logo"/>
-    <h1 className="App-title">{ greeting }</h1>
-  </header>
+import AppHeader from './AppHeader'
+
+const AppIntro = () => (
+  <p className="App-intro">
+    To get started, edit <code>src/App.js</code> and save to reload.
+  </p>
 )
 
-const obj = {
-  id: 'Yes this is the object',
-  foo() {
-    console.log(this)
-  }
-}
-obj.foo()
-const fn = obj.foo
-fn()
+const obj = { a: 1, b: 2, c: 3 }
+const { a, ...rest } = obj
+console.log(a)
+console.log(rest)
+
+const ExclamationMarkAdderButton = ({ onClick, ...props }) => (
+  <p>
+    Add exclamation marks to the header:
+    <button type="button" onClick={onClick} {...props}>
+      Click me!
+    </button>
+  </p>
+)
 
 class App extends Component {
   state = { greeting: "👻🕸 It's Friday 13th!" }
@@ -38,14 +42,9 @@ class App extends Component {
     return (
       <div className="App">
         <AppHeader greeting={this.state.greeting}/>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>
-          <button type="button" onClick={this.handleButtonClick}>
-            Click me!
-          </button>
-        </p>
+        <AppIntro/>
+        <ExclamationMarkAdderButton keyindex="-1"
+                                    onClick={this.handleButtonClick}/>
       </div>
     )
   }
