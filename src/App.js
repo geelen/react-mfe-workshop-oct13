@@ -20,13 +20,9 @@ const fn = obj.foo
 fn()
 
 class App extends Component {
-  constructor() {
-    super()
-    this.state = { greeting: "👻🕸 It's Friday 13th!" }
-    this.handleButtonClick = this.handleButtonClick.bind(this)
-  }
+  state = { greeting: "👻🕸 It's Friday 13th!" }
 
-  handleButtonClick() {
+  handleButtonClick = () => {
     if (!this.state.greeting.endsWith('!!!!!!!')) {
       this.setState({
         greeting: this.state.greeting + '!'
