@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { addMessageToStore } from '../store'
+import { addMessageToStore } from '../actions'
 
 const MessageForm = styled.form`
   background: moccasin;
