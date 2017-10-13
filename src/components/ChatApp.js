@@ -1,24 +1,10 @@
 import React from 'react'
 
-const MessageEntry = 'div'
-const Avatar = 'div'
-const Lines = 'div'
+import Message from './Message'
+import InputArea from './InputArea'
+
 const FillScreen = 'div'
 const ChatWindow = 'div'
-const InputArea = 'div'
-const InputField = 'div'
-const SubmitButton = 'div'
-
-const Message = () => (
-  <MessageEntry>
-    <Avatar/>
-    <Lines>
-      <div>Line one</div>
-      <div>Line two</div>
-      <div>Line three</div>
-    </Lines>
-  </MessageEntry>
-)
 
 const ChatApp = () => (
   <FillScreen>
@@ -27,10 +13,7 @@ const ChatApp = () => (
       <Message/>
       <Message/>
     </ChatWindow>
-    <InputArea>
-      <InputField/>
-      <SubmitButton/>
-    </InputArea>
+    <InputArea/>
   </FillScreen>
 )
 
