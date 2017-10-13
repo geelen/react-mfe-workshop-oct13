@@ -16,13 +16,15 @@ const Lines = styled.div`
   line-height: 1.3;
 `
 
-const Message = () => (
+const Message = ({ avatar, lines }) => (
   <Wrapper>
-    <Avatar src="http://fillmurray.com/96/96"/>
+    <Avatar src={ avatar }/>
     <Lines>
-      <div>Line one</div>
-      <div>Line two</div>
-      <div>Line three</div>
+      {
+        lines.map(line => (
+          <div>{ line }</div>
+        ))
+      }
     </Lines>
   </Wrapper>
 )
